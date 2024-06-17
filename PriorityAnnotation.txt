@@ -1,0 +1,37 @@
+package com.testng;
+
+import org.testng.annotations.Test;
+
+public class Priority {
+
+	@Test(priority = 1)
+	private void logIn() {
+
+		System.out.println("Login Page");
+	}
+	@Test(priority = 2)
+	private void homePage() {
+
+		System.out.println("Home Page");
+	}
+	@Test(priority = 3)
+	private void searchProduct() {
+
+		System.out.println("Search Product");
+	}
+	@Test(priority = 4)
+	private void selectProduct() {
+
+		System.out.println("Select Product");
+	}
+	@Test(priority = 5)
+	private void orderProduct() {
+
+		System.out.println("Order Product");
+	}
+	@Test(priority = 6)
+	private void logOut() {
+
+		System.out.println("Logout Page");
+	}
+}
