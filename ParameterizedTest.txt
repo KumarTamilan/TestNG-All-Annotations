@@ -1,0 +1,76 @@
+package com.testng;
+
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+public class ParameterizedTest {
+
+	
+	@Test
+	@Parameters({"username","password"})
+	private void logInValidUsernameValidPasswod(String username,String password) {
+
+		System.out.println("USERNAME : "+username);
+		System.out.println("PASSWORD : "+password);
+	}
+	@Test
+	@Parameters({"username1","password1"})
+	private void logInInvalidUsernameValidPassword(String username1,String password1) {
+
+		System.out.println("USERNAME1 : "+username1);
+		System.out.println("PASSWORD1 : "+password1);
+	}
+	@Test
+	@Parameters({"username2","password2"})
+	private void logInValidUsernameInValidPassword(String username2,String password2) {
+
+		System.out.println("USERNAME2 : "+username2);
+		System.out.println("PASSWORD2 : "+password2);
+	}
+	@Test
+	@Parameters({"username3","password3"})
+	private void logInValidUsernameInInValidPassword(String username3,String password3) {
+
+		System.out.println("USERNAME3 : "+username3);
+		System.out.println("PASSWORD3 : "+password3);
+	}
+	
+}
+================================
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="suite">
+	<test name="test">
+		<parameter name="username" value="kumaran@gmail.com"></parameter>
+		<parameter name="password" value="Kumaran12@Sanity"></parameter>
+		<parameter name="username1" value="kumaran123@gmail.com"></parameter>
+		<parameter name="password1" value="Kumaran456@Smoke"></parameter>
+		<parameter name="username2" value="kumaran456@gmail.com"></parameter>
+		<parameter name="password2" value="Kumaran456@adoc"></parameter>
+		<parameter name="username3" value="kumaran789@gmail.com"></parameter>
+		<parameter name="password3" value="Kumaran456@Regression"></parameter>
+		<classes>
+			<class name="com.testng.ParameterizedTest"></class>
+		</classes>
+	</test>
+</suite>
+
+==================================================
+
+OUTPUT:
+
+[RemoteTestNG] detected TestNG version 7.4.0
+USERNAME1 : kumaran123@gmail.com
+PASSWORD1 : Kumaran456@Smoke
+USERNAME3 : kumaran789@gmail.com
+PASSWORD3 : Kumaran456@Regression
+USERNAME2 : kumaran456@gmail.com
+PASSWORD2 : Kumaran456@adoc
+USERNAME : kumaran@gmail.com
+PASSWORD : Kumaran12@Sanity
+
+===============================================
+suite
+Total tests run: 4, Passes: 4, Failures: 0, Skips: 0
+===============================================
