@@ -1,0 +1,120 @@
+package com.testng;
+
+import org.testng.annotations.Test;
+
+public class DependsOnMethod {
+
+	@Test
+	private void logIn() {
+
+		System.out.println("Login Page");
+	}
+	@Test(dependsOnMethods = "logIn")
+	private void userName() {
+
+		System.out.println("Usename Field");
+	}
+	@Test(dependsOnMethods = "userName")
+	private void passWord() {
+
+		System.out.println("Password Field");
+	}
+	@Test(dependsOnMethods = "passWord")
+	private void logInClick() {
+
+		System.out.println("LogIn Click");
+	}
+	@Test(dependsOnMethods = "logInClick")
+	private void homePage() {
+
+		System.out.println("Home Page");
+	}
+	@Test(dependsOnMethods = "homePage")
+	private void products() {
+
+		System.out.println("Product Module");
+	}
+	@Test(dependsOnMethods = "products")
+	private void brands() {
+
+		System.out.println("Brands Module");
+	}
+	@Test(dependsOnMethods = "brands")
+	private void services() {
+
+		System.out.println("Service Module");
+	}
+	@Test(dependsOnMethods = "services")
+	private void searchProduct() {
+
+		System.out.println("Search Product");
+	}
+	@Test(dependsOnMethods = "searchProduct")
+	private void tvProduct() {
+
+		System.out.println("Tv");
+	}
+	@Test(dependsOnMethods = "tvProduct")
+	private void bridgeProduct() {
+
+		System.out.println("Bridge");
+	}
+	@Test(dependsOnMethods = "bridgeProduct")
+	private void homeAppilience() {
+
+		System.out.println("Small Home Appilience");
+	}
+	
+	@Test(dependsOnMethods = "homeAppilience")
+	private void selectProduct() {
+
+		System.out.println("Select Product");
+	}
+	@Test(dependsOnMethods = "selectProduct")
+	private void camera() {
+
+		System.out.println("Camera");
+	}
+	@Test(dependsOnMethods = "camera")
+	private void mobile() {
+
+		System.out.println("Mobile");
+	}
+	@Test(dependsOnMethods = "mobile")
+	private void laptop() {
+
+		System.out.println("Laptop");
+	}
+	@Test(dependsOnMethods = "laptop")
+	private void orderProduct() {
+
+		System.out.println("Order Product");
+	}
+	@Test(dependsOnMethods = "orderProduct")
+	private void firstOrder() {
+
+		System.out.println("First Order");
+	}
+	@Test(dependsOnMethods = "firstOrder")
+	private void secondOrder() {
+
+		System.out.println("Second Order");
+	}
+	@Test(dependsOnMethods = "secondOrder")
+	private void thirdOrder() {
+
+		System.out.println("Third Order");
+	}
+	@Test(dependsOnMethods = "thirdOrder")
+	private void logOut() {
+
+		System.out.println("Logout Page");
+	}
+	@Test(dependsOnMethods = "logOut")
+	private void logOutClick() {
+
+		System.out.println("Logout Click");
+	}
+
+
+}
