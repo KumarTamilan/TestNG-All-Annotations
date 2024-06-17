@@ -1,0 +1,71 @@
+package com.testng;
+
+import org.testng.annotations.Test;
+
+public class SimpleAnnotation {
+
+	@Test
+	private void methodOne() {
+
+		System.out.println("First Method");
+	}
+	@Test
+	private void methodTen() {
+
+		System.out.println("Tenth Method");
+	}
+	@Test
+	private void methodTwo() {
+
+		System.out.println("Second Method");
+	}
+	@Test
+	private void methodThree() {
+
+		System.out.println("Third Method");
+	}
+	@Test
+	private void methodFour() {
+
+		System.out.println("Fourth Method");
+	}
+	@Test
+	private void methodFifteen() {
+
+		System.out.println("Fifteenth Method");
+	}
+	@Test
+	private void methodFive() {
+
+		System.out.println("Fifth Method");
+	}
+	@Test
+	private void methodSix() {
+
+		System.out.println("Sixth Method");
+	}
+
+	
+}
+====================================
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="suite">
+	<test name="test">
+		<classes>
+			<class name="com.testng.SimpleAnnotation">
+				<methods>
+					<include name="methodOne"></include>
+					<exclude name="methodTen"></exclude>
+					<include name="methodTwo"></include>
+					<include name="methodThree"></include>
+					<include name="methodFour"></include>
+					<exclude name="methodFifteen"></exclude>
+					<include name="methodFive"></include>
+					<include name="methodSix"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>
