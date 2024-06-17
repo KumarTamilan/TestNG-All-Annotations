@@ -1,0 +1,95 @@
+package com.testng;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+
+public class VerificationAndValidation {
+
+	@Test
+	private void verification() {
+		
+		String actual = "Kumaran";
+		String expected = "Kumar";
+		SoftAssert sa = new SoftAssert();
+		sa.assertEquals(actual, expected);
+
+		System.out.println("Done");
+	}
+	@Test
+	private void validation() {
+
+		String actual = "Kumaran";
+		String expected = "Kumaran";
+		
+		Assert.assertEquals(actual, expected);
+		System.out.println("Done");
+	}
+}
+
+OUTPUT:
+======
+[RemoteTestNG] detected TestNG version 7.4.0
+Done
+Done
+PASSED: validation
+PASSED: verification
+
+===============================================
+    Default test
+    Tests run: 2, Failures: 0, Skips: 0
+===============================================
+
+
+===============================================
+Default suite
+Total tests run: 2, Passes: 2, Failures: 0, Skips: 0
+===============================================
+
+
+package com.testng;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+
+public class VerificationAndValidation {
+
+	@Test
+	private void verification() {
+		
+		String actual = "Kumaran";
+		String expected = "Kumar";
+		SoftAssert sa = new SoftAssert();
+		sa.assertEquals(actual, expected);
+
+		System.out.println("Done");
+	}
+	@Test
+	private void validation() {
+
+		String actual = "Kumaran";
+		String expected = "Kumar";
+		
+		Assert.assertEquals(actual, expected);
+		System.out.println("Done");
+	}
+}
+
+OUTPUT:
+=======
+Done
+PASSED: verification
+FAILED: validation
+================================================
+
+ Default test
+    Tests run: 2, Failures: 1, Skips: 0
+===============================================
+
+
+===============================================
+Default suite
+Total tests run: 2, Passes: 1, Failures: 1, Skips: 0
+===============================================
+
