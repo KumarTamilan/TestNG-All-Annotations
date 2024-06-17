@@ -1,0 +1,135 @@
+package com.testng;
+
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import cucumber.api.java.it.Data;
+
+public class DataproviderTest {
+
+	@Test(dataProvider = "data")
+	private void logIn(String name,int tamil,int english,int maths,
+			int science,int socialScience,int actual,int expect) {
+
+		System.out.println("NAME : "+name);
+		System.out.println("TAMIL SUBJECT : "+tamil);
+		System.out.println("ENGLISH SUBJECT : "+english);
+		System.out.println("MATHS SUBJECT : "+maths);
+		System.out.println("SCIENCE SUBJECT : "+science);
+		System.out.println("SOCIAL SCIENCE SUBJECT : "+socialScience);
+		System.out.println("ACTUAL MARK : "+actual);
+		System.out.println("EXPECTED MARK : "+expect);
+		
+	}
+	@DataProvider
+	private Object[][] data() {
+
+		return new Object [ ] [ ] {
+			{"Kumaran",98,97,100,100,97,500,492},
+			{"Mohan",98,98,100,100,97,500,493},
+			{"Arunmani",98,98,100,100,98,500,494},
+			{"Anand",99,98,100,100,97,500,495},
+			{"Kavin",98,98,100,100,100,500,496},
+			{"Guna",99,99,100,100,99,500,497},
+			{"Victor",99,99,100,100,100,500,498},
+			{"Barathi",98,98,100,100,98,500,494},
+			{"Sweety",98,99,100,100,100,500,497},
+		};
+	}
+}
+=====================================
+OUTPUT:
+ [RemoteTestNG] detected TestNG version 7.4.0
+NAME : Kumaran
+TAMIL SUBJECT : 98
+ENGLISH SUBJECT : 97
+MATHS SUBJECT : 100
+SCIENCE SUBJECT : 100
+SOCIAL SCIENCE SUBJECT : 97
+ACTUAL MARK : 500
+EXPECTED MARK : 492
+NAME : Mohan
+TAMIL SUBJECT : 98
+ENGLISH SUBJECT : 98
+MATHS SUBJECT : 100
+SCIENCE SUBJECT : 100
+SOCIAL SCIENCE SUBJECT : 97
+ACTUAL MARK : 500
+EXPECTED MARK : 493
+NAME : Arunmani
+TAMIL SUBJECT : 98
+ENGLISH SUBJECT : 98
+MATHS SUBJECT : 100
+SCIENCE SUBJECT : 100
+SOCIAL SCIENCE SUBJECT : 98
+ACTUAL MARK : 500
+EXPECTED MARK : 494
+NAME : Anand
+TAMIL SUBJECT : 99
+ENGLISH SUBJECT : 98
+MATHS SUBJECT : 100
+SCIENCE SUBJECT : 100
+SOCIAL SCIENCE SUBJECT : 97
+ACTUAL MARK : 500
+EXPECTED MARK : 495
+NAME : Kavin
+TAMIL SUBJECT : 98
+ENGLISH SUBJECT : 98
+MATHS SUBJECT : 100
+SCIENCE SUBJECT : 100
+SOCIAL SCIENCE SUBJECT : 100
+ACTUAL MARK : 500
+EXPECTED MARK : 496
+NAME : Guna
+TAMIL SUBJECT : 99
+ENGLISH SUBJECT : 99
+MATHS SUBJECT : 100
+SCIENCE SUBJECT : 100
+SOCIAL SCIENCE SUBJECT : 99
+ACTUAL MARK : 500
+EXPECTED MARK : 497
+NAME : Victor
+TAMIL SUBJECT : 99
+ENGLISH SUBJECT : 99
+MATHS SUBJECT : 100
+SCIENCE SUBJECT : 100
+SOCIAL SCIENCE SUBJECT : 100
+ACTUAL MARK : 500
+EXPECTED MARK : 498
+NAME : Barathi
+TAMIL SUBJECT : 98
+ENGLISH SUBJECT : 98
+MATHS SUBJECT : 100
+SCIENCE SUBJECT : 100
+SOCIAL SCIENCE SUBJECT : 98
+ACTUAL MARK : 500
+EXPECTED MARK : 494
+NAME : Sweety
+TAMIL SUBJECT : 98
+ENGLISH SUBJECT : 99
+MATHS SUBJECT : 100
+SCIENCE SUBJECT : 100
+SOCIAL SCIENCE SUBJECT : 100
+ACTUAL MARK : 500
+EXPECTED MARK : 497
+PASSED: logIn("Mohan", 98, 98, 100, 100, 97, 500, 493)
+PASSED: logIn("Kumaran", 98, 97, 100, 100, 97, 500, 492)
+PASSED: logIn("Barathi", 98, 98, 100, 100, 98, 500, 494)
+PASSED: logIn("Arunmani", 98, 98, 100, 100, 98, 500, 494)
+PASSED: logIn("Sweety", 98, 99, 100, 100, 100, 500, 497)
+PASSED: logIn("Guna", 99, 99, 100, 100, 99, 500, 497)
+PASSED: logIn("Anand", 99, 98, 100, 100, 97, 500, 495)
+PASSED: logIn("Kavin", 98, 98, 100, 100, 100, 500, 496)
+PASSED: logIn("Victor", 99, 99, 100, 100, 100, 500, 498)
+
+===============================================
+    Default test
+    Tests run: 1, Failures: 0, Skips: 0
+===============================================
+
+
+===============================================
+Default suite
+Total tests run: 9, Passes: 9, Failures: 0, Skips: 0
+===============================================
+
