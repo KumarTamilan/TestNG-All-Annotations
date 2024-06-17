@@ -1,0 +1,148 @@
+package com.testng;
+
+import org.testng.annotations.Test;
+
+public class GroupingTest {
+
+	@Test(priority = 1,groups = "LoginPage")
+	private void logIn() {
+
+		System.out.println("Login Page");
+	}
+	@Test(priority = 2,groups = "LoginPage")
+	private void userName() {
+
+		System.out.println("Usename Field");
+	}
+	@Test(priority = 3,groups = "LoginPage")
+	private void passWord() {
+
+		System.out.println("Password Field");
+	}
+	@Test(priority = 4,groups = "LoginPage")
+	private void logInClick() {
+
+		System.out.println("LogIn Click");
+	}
+	@Test(priority = 5,groups = "HomePage")
+	private void homePage() {
+
+		System.out.println("Home Page");
+	}
+	@Test(priority = 6,groups = "HomePage")
+	private void products() {
+
+		System.out.println("Product Module");
+	}
+	@Test(priority = 7,groups = "HomePage")
+	private void brands() {
+
+		System.out.println("Brands Module");
+	}
+	@Test(priority = 8,groups = "HomePage")
+	private void services() {
+
+		System.out.println("Service Module");
+	}
+	@Test(priority = 9,groups = "SearchProductPage")
+	private void searchProduct() {
+
+		System.out.println("Search Product");
+	}
+	@Test(priority = 10,groups = "SearchProductPage")
+	private void tvProduct() {
+
+		System.out.println("Tv");
+	}
+	@Test(priority = 11,groups = "SearchProductPage")
+	private void bridgeProduct() {
+
+		System.out.println("Bridge");
+	}
+	@Test(priority = 12,groups = "SearchProductPage")
+	private void homeAppilience() {
+
+		System.out.println("Small Home Appilience");
+	}
+	
+	@Test(priority = 13,groups = "SelectProduct")
+	private void selectProduct() {
+
+		System.out.println("Select Product");
+	}
+	@Test(priority = 14,groups = "SelectProduct")
+	private void camera() {
+
+		System.out.println("Camera");
+	}
+	@Test(priority = 15,groups = "SelectProduct")
+	private void mobile() {
+
+		System.out.println("Mobile");
+	}
+	@Test(priority = 16,groups = "SelectProduct")
+	private void laptop() {
+
+		System.out.println("Laptop");
+	}
+	@Test(priority = 17,groups = "OrderTheProduct")
+	private void orderProduct() {
+
+		System.out.println("Order Product");
+	}
+	@Test(priority = 18,groups = "OrderTheProduct")
+	private void firstOrder() {
+
+		System.out.println("First Order");
+	}
+	@Test(priority = 19,groups = "OrderTheProduct")
+	private void secondOrder() {
+
+		System.out.println("Second Order");
+	}
+	@Test(priority = 20,groups = "OrderTheProduct")
+	private void thirdOrder() {
+
+		System.out.println("Third Order");
+	}
+	@Test(priority = 21,groups = "LogOutPage")
+	private void logOut() {
+
+		System.out.println("Logout Page");
+	}
+	@Test(priority = 22,groups = "LogOutPage")
+	private void logOutClick() {
+
+		System.out.println("Logout Click");
+	}
+}
+===============================
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="suite">
+	<test name="test">
+		<groups>
+			<define name="SanityTest">
+				<include name="LoginPage"></include>
+				<include name="HomePage"></include>
+			</define>
+			<define name="SmokeTest">
+				<include name="SearchProductPage"></include>
+				<include name="SelectProduct"></include>
+			</define>
+			<define name="RegressionTest">
+				<include name="OrderTheProduct"></include>
+				<include name="LogOutPage"></include>
+			</define>
+			<run>
+				<include name="SanityTest"></include>
+				<include name="SmokeTest"></include>
+				<include name="RegressionTest"></include>
+			</run>
+		</groups>
+		<classes>
+			<class name="com.testng.GroupingTest"></class>
+		</classes>
+	</test>
+</suite>
