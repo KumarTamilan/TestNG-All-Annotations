@@ -1,0 +1,38 @@
+package com.testng;
+
+import org.testng.annotations.Test;
+
+public class Ignore {
+
+	@Test
+	private void logIn() {
+
+		System.out.println("Login Page");
+	}
+	@Test
+	private void homePage() {
+
+		System.out.println("Home Page");
+	}
+	@Test
+	private void searchProduct() {
+
+		System.out.println("Search Product");
+	}
+	@Test
+	private void selectProduct() {
+
+		System.out.println("Select Product");
+	}
+	@Test(enabled = false)
+	private void orderProduct() {
+
+		System.out.println("Order Product");
+	}
+	@org.testng.annotations.Ignore
+	@Test
+	private void logOut() {
+
+		System.out.println("Logout Page");
+	}
+}
